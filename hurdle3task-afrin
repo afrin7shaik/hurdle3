@@ -1,0 +1,125 @@
+Step 1: Initialize Git Repository
+First, navigate to your project directory in the terminal:
+bashCopycd /path/to/your/project
+Initialize a new Git repository:
+bashCopygit init
+Step 2: Configure Git (if not done before)
+bashCopygit config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+Step 3: Create .gitignore
+Create a .gitignore file to specify which files/folders Git should ignore:
+bashCopy# Node.js
+node_modules/
+npm-debug.log
+
+# Build directories
+dist/
+build/
+
+# Environment variables
+.env
+.env.local
+
+# IDE specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Operating System files
+.DS_Store
+Thumbs.db
+Step 4: Stage and Commit Files
+Add files to staging area:
+bashCopy# Add all files
+git add .
+
+# Or add specific files
+git add filename1 filename2
+Create your first commit:
+bashCopygit commit -m "Initial commit: Project setup"
+Step 5: Connect to Remote Repository
+Create a new repository on GitHub/GitLab/Bitbucket, then:
+bashCopy# Add remote repository
+git remote add origin https://github.com/username/repository.git
+
+# Verify remote
+git remote -v
+Step 6: Push to Remote Repository
+bashCopy# Push to master/main branch
+git push -u origin main
+
+# If you're using the older 'master' naming convention
+git push -u origin master
+Common Workflows
+Creating a New Feature Branch
+bashCopy# Create and switch to new branch
+git checkout -b feature/new-feature
+
+# Make changes and commit
+git add .
+git commit -m "Add new feature"
+
+# Push branch to remote
+git push -u origin feature/new-feature
+Updating Your Local Repository
+bashCopy# Fetch and merge changes
+git pull origin main
+
+# Or update specific branch
+git pull origin branch-name
+Best Practices
+
+Commit Messages
+
+Use present tense ("Add feature" not "Added feature")
+Be descriptive but concise
+Start with a verb (Add, Update, Fix, Refactor, etc.)
+
+
+Branch Management
+
+Use feature branches for new development
+Delete branches after merging
+Keep main/master branch stable
+
+
+Regular Updates
+
+Pull changes frequently
+Resolve conflicts promptly
+Push completed work regularly
+
+
+
+
+
+Common Issues and Solutions
+Authentication Failed
+bashCopy# Using personal access token
+git remote set-url origin https://your-username:your-token@github.com/username/repository.git
+Undo Last Commit
+bashCopy# Undo commit but keep changes staged
+git reset --soft HEAD^
+
+# Undo commit and unstage changes
+git reset HEAD^
+Fix Wrong Remote URL
+bashCopygit remote set-url origin https://github.com/username/repository.git
+Advanced Git Commands
+Viewing History
+bashCopy# View commit history
+git log
+
+# View simplified history
+git log --oneline
+
+# View branch history
+git log --graph --oneline --all
+Tagging Releases
+bashCopy# Create annotated tag
+git tag -a v1.0.0 -m "Version 1.0.0"
+
+# Push tags to remote
+git push origin --tags
+Remember to always verify your remote repository after pushing to ensure all files were uploaded correctly .
